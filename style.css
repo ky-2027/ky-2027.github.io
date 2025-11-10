@@ -81,6 +81,14 @@ h2, h3 {
   border-radius: 8px;
 }
 
+.about img {
+  width: 200px;   /* makes it smaller */
+  height: auto;
+  border-radius: 50%;
+  display: block;
+  margin: 20px auto;
+}
+
 
 /* ===== Grid Layout ===== */
 .grid {
