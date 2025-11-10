@@ -27,4 +27,96 @@ nav {
 nav ul {
   list-style: none;
   display: flex;
-  justify-content: c
+  justify-content: center;
+  gap: 2rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: #1e90ff;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #0a66c2;
+}
+
+/* ========== Hero Section ========== */
+header {
+  padding: 5rem 1rem;
+}
+
+header h1 {
+  font-size: 2.8rem;
+  color: #1e90ff;
+  margin-bottom: 0.8rem;
+}
+
+header p {
+  color: #4f6478;
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* ========== Sections ========== */
+section {
+  padding: 4rem 1rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+section h2 {
+  color: #1e90ff;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+section p {
+  color: #3b4b5a;
+  font-size: 1rem;
+  margin-bottom: 2rem;
+}
+
+/* ========== Gallery ========== */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.gallery img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* ========== Footer ========== */
+footer {
+  background-color: #ffffff;
+  color: #4f6478;
+  font-size: 0.9rem;
+  padding: 1.5rem 0;
+  border-top: 1px solid #dbe5f1;
+  margin-top: 3rem;
+}
+
+footer a {
+  color: #1e90ff;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
