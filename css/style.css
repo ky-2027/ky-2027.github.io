@@ -24,22 +24,29 @@ nav {
   z-index: 10;
 }
 
-nav ul {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-}
-
 nav a {
   text-decoration: none;
   color: #1e90ff;
   font-weight: 600;
+  font-size: 1rem;
+  padding: 0.5rem 0;
+  margin: 0 1rem; /* space between links */
   transition: color 0.3s ease;
 }
 
 nav a:hover {
   color: #0a66c2;
+}
+
+nav a.active {
+  text-decoration: underline; /* optional, to show current page */
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
 }
 
 /* ========== Hero Section ========== */
