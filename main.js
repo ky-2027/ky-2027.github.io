@@ -4,26 +4,38 @@ document.addEventListener("DOMContentLoaded", () => {
   // create lightbox elements
   const lightbox = document.createElement("div");
   lightbox.classList.add("lightbox");
+
   const lightboxImg = document.createElement("img");
   const lightboxDesc = document.createElement("p");
 
+  // add close button
+  const closeBtn = document.createElement("span");
+  closeBtn.textContent = "×";
+  closeBtn.classList.add("close-btn");
+
+  lightbox.appendChild(closeBtn);
   lightbox.appendChild(lightboxImg);
   lightbox.appendChild(lightboxDesc);
   document.body.appendChild(lightbox);
 
-  // show image in lightbox on click
   galleryImages.forEach(img => {
     img.addEventListener("click", () => {
       lightboxImg.src = img.src;
       lightboxDesc.textContent = img.dataset.description || "";
       lightbox.classList.add("active");
-      document.body.style.overflow = "hidden"; // prevent scrolling while lightbox open
+      document.body.style.overflow = "hidden"; // prevent scrolling while open
     });
   });
 
-  // close lightbox when clicking outside the image
+  // close lightbox on X click
+  closeBtn.addEventListener("click", () => {
+    lightbox.classList.remove("active");
+    document.body.style.overflow = "auto";
+  });
+
+  // optional: also close by clicking outside image/description
   lightbox.addEventListener("click", (e) => {
-    if (e.target !== lightboxImg && e.target !== lightboxDesc) {
+    if (e.target === lightbox) {
       lightbox.classList.remove("active");
       document.body.style.overflow = "auto";
     }
