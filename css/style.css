@@ -42,13 +42,6 @@ nav a.active {
   text-decoration: underline; /* optional, to show current page */
 }
 
-nav ul {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-}
-
 /* ========== Hero Section ========== */
 header {
   padding: 5rem 1rem;
