@@ -145,3 +145,43 @@ footer a:hover {
     width: 90%;
   }
 }
+
+/* ---------- Home Page Styling ---------- */
+.hero {
+  padding: 60px 20px;
+}
+
+.hero h2 {
+  font-size: 2rem;
+  color: #004aad;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.featured {
+  margin-top: 50px;
+}
+
+.featured .gallery {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 25px;
+  margin-top: 25px;
+}
+
+.featured .gallery img {
+  width: 250px;
+  height: auto;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.featured .gallery img:hover {
+  transform: scale(1.05);
+}
+
