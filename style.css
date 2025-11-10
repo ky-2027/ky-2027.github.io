@@ -1,186 +1,126 @@
-/* ===== Base Styles ===== */
+/* ----------- Global Styles ----------- */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Inter", "Helvetica Neue", sans-serif;
 }
 
 body {
-  background: #f9f9fb;
-  color: #222;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+  background-color: #f4f8fc;
+  color: #1a1a1a;
+  line-height: 1.6;
 }
 
-header {
-  padding: 20px 40px;
+/* ----------- Navigation ----------- */
+nav {
+  background-color: #0a3d62;
+  padding: 1rem 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #fff;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-  position: sticky;
-  top: 0;
-  z-index: 100;
 }
 
-header h1 a {
-  color: #111;
-  text-decoration: none;
-  font-weight: 600;
+nav h1 {
+  color: #fff;
+  font-size: 1.5rem;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
 }
 
 nav a {
-  margin-left: 20px;
+  color: #cce4ff;
   text-decoration: none;
-  color: #333;
-  transition: color 0.2s ease;
+  font-weight: 500;
+  transition: 0.3s;
 }
 
-nav a:hover,
-nav a.active {
-  color: #0077ff;
+nav a:hover {
+  color: #ffffff;
+  border-bottom: 2px solid #1e90ff;
 }
 
-/* ===== Main Content ===== */
-main {
-  flex: 1;
-  padding: 60px 20px;
-  max-width: 1000px;
+/* ----------- Hero Section ----------- */
+header {
+  text-align: center;
+  padding: 5rem 1rem;
+  background: linear-gradient(to bottom right, #0a3d62, #1e90ff);
+  color: white;
+}
+
+header h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+header p {
+  font-size: 1.2rem;
+  max-width: 600px;
   margin: 0 auto;
-  animation: fadeIn 0.6s ease;
 }
 
-.intro {
-  text-align: center;
-  margin-bottom: 60px;
+/* ----------- Projects Preview ----------- */
+.projects-preview {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  padding: 3rem 2rem;
 }
 
-.intro h2 {
-  font-size: 2.2em;
-  margin-bottom: 10px;
+.project-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  transition: 0.3s;
 }
 
-.intro p {
-  color: #555;
+.project-card:hover {
+  transform: translateY(-5px);
 }
 
-h2, h3 {
-  text-align: center;
-  margin-bottom: 25px;
-  font-weight: 600;
-}
-
-/* Control image display size */
-.card img {
+.project-card img {
   width: 100%;
-  height: 200px;         /* adjust this value */
-  object-fit: cover;     /* crops the image nicely to fit */
+  height: 200px; /* <-- you can change this value */
+  object-fit: cover; /* keeps the image cropped nicely */
   border-radius: 8px;
 }
 
-.about img {
-  width: 200px;   /* makes it smaller */
-  height: auto;
-  border-radius: 50%;
-  display: block;
-  margin: 20px auto;
+.project-card h3 {
+  padding: 1rem;
+  color: #0a3d62;
 }
 
-
-/* ===== Grid Layout ===== */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 25px;
-}
-
-.card {
-  background: #fff;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.05);
-  transition: all 0.3s ease;
-  cursor: pointer;
-  transform: translateY(0);
-}
-
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-}
-
-.card img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  transition: transform 0.3s ease;
-}
-
-.card:hover img {
-  transform: scale(1.05);
-}
-
-.card p {
-  padding: 15px;
-  font-weight: 500;
-  color: #333;
-}
-
-/* ===== Footer ===== */
+/* ----------- Footer ----------- */
 footer {
+  background-color: #0a3d62;
+  color: #cce4ff;
   text-align: center;
-  padding: 25px;
-  border-top: 1px solid #eee;
-  background: #fff;
-  color: #444;
-  font-size: 0.95em;
+  padding: 1.5rem 0;
+  margin-top: 3rem;
 }
 
 footer a {
-  color: #0077ff;
+  color: #1e90ff;
   text-decoration: none;
 }
 
-/* ===== Lightbox ===== */
-.lightbox {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.85);
-  display: none;
-  justify-content: center;
-  align-items: center;
-  z-index: 200;
+footer a:hover {
+  text-decoration: underline;
 }
 
-.lightbox img {
-  max-width: 90%;
-  max-height: 80%;
-  border-radius: 10px;
-}
-
-.lightbox.active {
-  display: flex;
-  animation: fadeIn 0.3s ease;
-}
-
-/* ===== Animations ===== */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/* ===== Responsive ===== */
-@media (max-width: 600px) {
-  header {
+/* ----------- Responsive ----------- */
+@media (max-width: 768px) {
+  nav ul {
     flex-direction: column;
+    gap: 0.8rem;
   }
-  nav {
-    margin-top: 10px;
+
+  header h2 {
+    font-size: 2rem;
   }
 }
